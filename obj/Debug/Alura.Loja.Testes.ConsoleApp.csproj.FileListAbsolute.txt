@@ -1,0 +1,14 @@
+c:\users\caleum\documents\visual studio 2017\Projects\Alura.Loja\Alura.Loja.Testes.ConsoleApp\bin\Debug\Alura.Loja.Testes.ConsoleApp.exe.config
+c:\users\caleum\documents\visual studio 2017\Projects\Alura.Loja\Alura.Loja.Testes.ConsoleApp\bin\Debug\Alura.Loja.Testes.ConsoleApp.exe
+c:\users\caleum\documents\visual studio 2017\Projects\Alura.Loja\Alura.Loja.Testes.ConsoleApp\bin\Debug\Alura.Loja.Testes.ConsoleApp.pdb
+c:\users\caleum\documents\visual studio 2017\Projects\Alura.Loja\Alura.Loja.Testes.ConsoleApp\obj\Debug\Alura.Loja.Testes.ConsoleApp.csprojResolveAssemblyReference.cache
+c:\users\caleum\documents\visual studio 2017\Projects\Alura.Loja\Alura.Loja.Testes.ConsoleApp\obj\Debug\Alura.Loja.Testes.ConsoleApp.exe
+c:\users\caleum\documents\visual studio 2017\Projects\Alura.Loja\Alura.Loja.Testes.ConsoleApp\obj\Debug\Alura.Loja.Testes.ConsoleApp.pdb
+H:\Alura.Loja\obj\Debug\Alura.Loja.Testes.ConsoleApp.csprojAssemblyReference.cache
+H:\Alura.Loja\obj\Debug\Alura.Loja.Testes.ConsoleApp.csproj.CoreCompileInputs.cache
+H:\Alura.Loja\obj\Debug\Alura.Loja.Testes.ConsoleApp.exe
+H:\Alura.Loja\obj\Debug\Alura.Loja.Testes.ConsoleApp.pdb
+H:\Alura.Loja\bin\Debug\Alura.Loja.Testes.ConsoleApp.exe.config
+H:\Alura.Loja\bin\Debug\Alura.Loja.Testes.ConsoleApp.exe
+H:\Alura.Loja\bin\Debug\Alura.Loja.Testes.ConsoleApp.pdb
+H:\Alura.Loja\obj\Debug\Alura.Loja.Testes.ConsoleApp.exe.config
