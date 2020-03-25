@@ -11,7 +11,7 @@ namespace Loja.Testes.ConsoleApp
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder
-                    .UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=LojaDB;Trusted_Connection=true;");
+                    .UseSqlServer(@"Server=DESKTOP-USFG9FR\SQLSERVER2016;Database=LojaDB;Trusted_Connection=true;");
             }
         }
 
@@ -24,7 +24,7 @@ namespace Loja.Testes.ConsoleApp
         public DbSet<Produto> Produtos { get; set; }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<LojaContext>(options => options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=LojaDB;Trusted_Connection=true;"));
+            services.AddDbContext<LojaContext>(options => options.UseSqlServer(@"Server=DESKTOP-USFG9FR\SQLSERVER2016;Database=LojaDB;Trusted_Connection=true;"));
         }  
     }
 }
