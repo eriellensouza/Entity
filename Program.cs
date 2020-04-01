@@ -1,5 +1,6 @@
-﻿using Alura.Loja.Testes.ConsoleApp;
-using Microsoft.EntityFrameworkCore;
+﻿using Alura.Loja.Testes.ConsoleApp.Conexao;
+using Alura.Loja.Testes.ConsoleApp.Contexto;
+using Alura.Loja.Testes.ConsoleApp.Util;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;

@@ -1,4 +1,4 @@
-﻿namespace Loja.Testes.ConsoleApp
+﻿namespace Alura.Loja.Testes.ConsoleApp.Util
 {
     public class Compra
     {
