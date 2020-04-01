@@ -35,7 +35,7 @@ namespace Loja.Testes.ConsoleApp
                 ParamCategoria = new SqlParameter("categoria", p.Categoria);
                 _createCommand.Parameters.Add(ParamCategoria);
 
-                ParamPreco = new SqlParameter("preco", p.Preco);
+                ParamPreco = new SqlParameter("preco", p.PrecoUnitario);
                 _createCommand.Parameters.Add(ParamPreco);
 
                 ParamId = new SqlParameter("id", p.Id);
@@ -57,7 +57,7 @@ namespace Loja.Testes.ConsoleApp
 
                 ParamNome = new SqlParameter("nome", p.Nome);
                 ParamCategoria = new SqlParameter("categoria", p.Categoria);
-                ParamPreco = new SqlParameter("preco", p.Preco);
+                ParamPreco = new SqlParameter("preco", p.PrecoUnitario);
                 ParamId = new SqlParameter("id", p.Id);
 
                 _createCommand.Parameters.Add(ParamNome);
@@ -91,7 +91,7 @@ namespace Loja.Testes.ConsoleApp
                 p.Id = Convert.ToInt32(resultado["Id"]);
                 p.Nome = Convert.ToString(resultado["Nome"]);
                 p.Categoria = Convert.ToString(resultado["Categoria"]);
-                p.Preco = Convert.ToDouble(resultado["Preco"]);
+                p.PrecoUnitario = Convert.ToDouble(resultado["Preco"]);
                 lista.Add(p);
             }
             resultado.Close();

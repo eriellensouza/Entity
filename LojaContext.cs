@@ -22,6 +22,7 @@ namespace Loja.Testes.ConsoleApp
             :base(options)
         {}
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Compra> Compras { get; set; }
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<LojaContext>(options => options.UseSqlServer(@"Server=DESKTOP-USFG9FR\SQLSERVER2016;Database=LojaDB;Trusted_Connection=true;"));

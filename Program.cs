@@ -1,4 +1,6 @@
 ﻿using Alura.Loja.Testes.ConsoleApp;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -12,46 +14,44 @@ namespace Loja.Testes.ConsoleApp
     {
         static void Main(string[] args)
         {
+            //compra 6 pães franceses
+
+            var paoFrances = new Produto();
+            paoFrances.Nome = "Pão Francês";
+            paoFrances.PrecoUnitario = 0.40;
+            paoFrances.Unidade = "Unidade";
+            paoFrances.Categoria = "Padaria";
+
+            var compra = new Compra();
+            compra.Quantidade = 6;
+            compra.Produto = paoFrances;
+            compra.Preco = paoFrances.PrecoUnitario * compra.Quantidade;
+
+
             using (var contexto = new LojaContext())
             {
                 var serviceProvider = contexto.GetInfrastructure<IServiceProvider>();
                 var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
                 loggerFactory.AddProvider(SqlLoggerProvider.Create());
 
-                var produtos = contexto.Produtos.ToList();
-                foreach (var p in produtos)
-                {
-                    Console.WriteLine(p);
-                }
-
-                Console.WriteLine("=================");
-                foreach (var e in contexto.ChangeTracker.Entries())
-                {
-                    Console.WriteLine(e.State);
-                }
-
-                var p1 = produtos.Last();
-                p1.Nome = "007 - O Espiao Que Me Amava";
-
-                Console.WriteLine("=================");
-                foreach (var e in contexto.ChangeTracker.Entries())
-                {
-                    Console.WriteLine(e.State);
-                }
-
+                contexto.Compras.Add(compra);
+                ExibeEntries(contexto.ChangeTracker.Entries());
                 contexto.SaveChanges();
-
-                //Console.WriteLine("=================");
-                //produtos = contexto.Produtos.ToList();
-                //foreach (var p in produtos)
-                //{
-                //    Console.WriteLine(p);
-                //}
+                ExibeEntries(contexto.ChangeTracker.Entries());
             }
         }
+
+        private static void ExibeEntries(IEnumerable<EntityEntry> entries)
+        {
+            foreach (var e in entries)
+            {
+                Console.WriteLine(e.Entity.ToString() + " - " + e.State);
+            }
+            
+        }
+
+        
     }
-
-
 }
 
 //static List<Produto> produtos = new List<Produto>();
@@ -86,4 +86,64 @@ namespace Loja.Testes.ConsoleApp
 //    {
 //        Console.WriteLine(n.ToString());
 //    }
+//}
+
+
+//using (var contexto = new LojaContext())
+//{
+//    var insere = new ProdutoDAOEntity();
+//    var serviceProvider = contexto.GetInfrastructure<IServiceProvider>();
+//    var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
+//    loggerFactory.AddProvider(SqlLoggerProvider.Create());
+
+//    var novoProduto = new Produto()
+//    {
+//        Nome = "Harry Potter e a Ordem da Fênix",
+//        Categoria = "Livros",
+//        Preco = 19.89
+//    };
+//    insere.Adicionar(novoProduto);
+
+//    var novoProduto2 = new Produto()
+//    { 
+//        Nome = "Marley",
+//        Categoria = "Livros",
+//        Preco = 19.99
+//    };
+//    insere.Adicionar(novoProduto2);
+
+//    var produtos = contexto.Produtos.ToList();
+
+//    foreach (var p in produtos)
+//    {
+//        Console.WriteLine(p);
+//    }
+
+//    Console.WriteLine("=================");
+//    foreach (var e in contexto.ChangeTracker.Entries())
+//    {
+//        Console.WriteLine(e.State);
+//    }
+
+
+
+//    var p1 = produtos.Last();
+//    p1.Nome = "007 - O Espiao Que Me Amava";
+
+//    Console.WriteLine("=================");
+//    foreach (var e in contexto.ChangeTracker.Entries())
+//    {
+//        Console.WriteLine(e.State);
+//    }
+
+//    contexto.SaveChanges();
+
+//    Console.WriteLine("=================");
+//    produtos = contexto.Produtos.ToList();
+//    foreach (var p in produtos)
+//    {
+//        Console.WriteLine(p);
+//    }
+
+//    Console.ReadLine();
 //}
