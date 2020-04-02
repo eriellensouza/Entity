@@ -232,6 +232,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\20200402004539_Promocao.cs" />
+    <Compile Include="Migrations\20200402004539_Promocao.designer.cs">
+      <DependentUpon>20200402004539_Promocao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\PromocaoProduto.cs" />
     <Compile Include="Util\Compra.cs" />
     <Compile Include="Util\Help.cs" />
     <Compile Include="Interface\IProdutoDAO.cs" />
@@ -255,6 +260,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Conexao\SqlLoggerProvider .cs" />
+    <Compile Include="Util\Promocao.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -15,19 +15,17 @@ namespace Loja.Testes.ConsoleApp
     {
         static void Main(string[] args)
         {
-            //compra 6 pães franceses
 
-            var paoFrances = new Produto();
-            paoFrances.Nome = "Pão Francês";
-            paoFrances.PrecoUnitario = 0.40;
-            paoFrances.Unidade = "Unidade";
-            paoFrances.Categoria = "Padaria";
+            var promocaoPascoa = new Promocao();
 
-            var compra = new Compra();
-            compra.Quantidade = 6;
-            compra.Produto = paoFrances;
-            compra.Preco = paoFrances.PrecoUnitario * compra.Quantidade;
+            promocaoPascoa.Descricao = "Pascoa Feliz!";
+            promocaoPascoa.DataInicio = DateTime.Now;
+            promocaoPascoa.DataFim = DateTime.Now.AddMonths(3);
 
+
+            //promocaoPascoa.Produtos.Add(new Produto());
+            //promocaoPascoa.Produtos.Add(new Produto());
+            //promocaoPascoa.Produtos.Add(new Produto());
 
             using (var contexto = new LojaContext())
             {
@@ -35,10 +33,9 @@ namespace Loja.Testes.ConsoleApp
                 var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
                 loggerFactory.AddProvider(SqlLoggerProvider.Create());
 
-                contexto.Compras.Add(compra);
-                ExibeEntries(contexto.ChangeTracker.Entries());
-                contexto.SaveChanges();
-                ExibeEntries(contexto.ChangeTracker.Entries());
+                //ExibeEntries(contexto.ChangeTracker.Entries());
+                //contexto.SaveChanges();
+                //ExibeEntries(contexto.ChangeTracker.Entries());
             }
         }
 
@@ -54,6 +51,45 @@ namespace Loja.Testes.ConsoleApp
         
     }
 }
+
+//static void Main(string[] args)
+//{
+//    //compra 6 pães franceses
+
+//    var paoFrances = new Produto();
+//    paoFrances.Nome = "Pão Francês";
+//    paoFrances.PrecoUnitario = 0.40;
+//    paoFrances.Unidade = "Unidade";
+//    paoFrances.Categoria = "Padaria";
+
+//    var compra = new Compra();
+//    compra.Quantidade = 6;
+//    compra.Produto = paoFrances;
+//    compra.Preco = paoFrances.PrecoUnitario * compra.Quantidade;
+
+
+//    using (var contexto = new LojaContext())
+//    {
+//        var serviceProvider = contexto.GetInfrastructure<IServiceProvider>();
+//        var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
+//        loggerFactory.AddProvider(SqlLoggerProvider.Create());
+
+//        contexto.Compras.Add(compra);
+//        ExibeEntries(contexto.ChangeTracker.Entries());
+//        contexto.SaveChanges();
+//        ExibeEntries(contexto.ChangeTracker.Entries());
+//    }
+//}
+
+//private static void ExibeEntries(IEnumerable<EntityEntry> entries)
+//{
+//    foreach (var e in entries)
+//    {
+//        Console.WriteLine(e.Entity.ToString() + " - " + e.State);
+//    }
+
+//}
+
 
 //static List<Produto> produtos = new List<Produto>();
 //static void Main(string[] args)

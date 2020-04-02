@@ -23,6 +23,15 @@ namespace Alura.Loja.Testes.ConsoleApp.Contexto
         {}
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Compra> Compras { get; set; }
+        public DbSet<Promocao> Promocoes { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Entity<PromocaoProduto>()
+                .HasKey(pp => new { pp.ProdutoId, pp.PromocaoId });
+            base.OnModelCreating(modelBuilder);
+        }
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<LojaContext>(options => options.UseSqlServer(@"Server=DESKTOP-USFG9FR\SQLSERVER2016;Database=LojaDB;Trusted_Connection=true;"));
