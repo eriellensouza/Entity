@@ -1,20 +1,33 @@
-﻿using Alura.Loja.Testes.ConsoleApp.Conexao;
-using Alura.Loja.Testes.ConsoleApp.Contexto;
-using Alura.Loja.Testes.ConsoleApp.Util;
+﻿using Alura.EntityFramework.Conexao;
+using Alura.EntityFramework.Contexto;
+using Alura.EntityFramework.Util;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace Loja.Testes.ConsoleApp
+namespace EntityFramework
 {
     public class Program
     {
         static void Main(string[] args)
         {
+            var fulaninho = new Cliente();
+            fulaninho.Nome = "Euzinha";
+            //fulaninho.EnderecoDeEntrega = ?
+
+
+        }
+        private static void MuitosParaMuitos()
+        { 
+            var p1 = new Produto()
+            { Nome= "Laranja", Categoria = "Hortifruti", PrecoUnitario = 0.50, Unidade = "Kilo"};
+            var p2 = new Produto()
+            { Nome = "Gin", Categoria = "Bebidas alcóolicas", PrecoUnitario = 80.0, Unidade = "Unidade" };
+            var p3 = new Produto()
+            { Nome = "Taça", Categoria = "Utensílios Domesticos", PrecoUnitario = 5.0, Unidade = "Unidade" };
 
             var promocaoPascoa = new Promocao();
 
@@ -22,10 +35,9 @@ namespace Loja.Testes.ConsoleApp
             promocaoPascoa.DataInicio = DateTime.Now;
             promocaoPascoa.DataFim = DateTime.Now.AddMonths(3);
 
-
-            //promocaoPascoa.Produtos.Add(new Produto());
-            //promocaoPascoa.Produtos.Add(new Produto());
-            //promocaoPascoa.Produtos.Add(new Produto());
+            promocaoPascoa.IncluiProduto(p1);
+            promocaoPascoa.IncluiProduto(p2);
+            promocaoPascoa.IncluiProduto(p3);
 
             using (var contexto = new LojaContext())
             {
@@ -33,9 +45,16 @@ namespace Loja.Testes.ConsoleApp
                 var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
                 loggerFactory.AddProvider(SqlLoggerProvider.Create());
 
-                //ExibeEntries(contexto.ChangeTracker.Entries());
-                //contexto.SaveChanges();
-                //ExibeEntries(contexto.ChangeTracker.Entries());
+                //Adicionar
+                contexto.Add(promocaoPascoa);
+
+                //Deletar
+                //var promocao = contexto.Promocoes.Find(2);
+                //contexto.Promocoes.Remove(promocao);
+
+                ExibeEntries(contexto.ChangeTracker.Entries());
+                contexto.SaveChanges();
+                ExibeEntries(contexto.ChangeTracker.Entries());
             }
         }
 
@@ -43,7 +62,10 @@ namespace Loja.Testes.ConsoleApp
         {
             foreach (var e in entries)
             {
-                Console.WriteLine(e.Entity.ToString() + " - " + e.State);
+                Console.WriteLine
+                (
+                    e.Entity.ToString() + "\n" + e.State 
+                );
             }
             
         }

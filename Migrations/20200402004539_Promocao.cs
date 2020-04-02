@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Alura.Loja.Testes.ConsoleApp.Migrations
+namespace Alura.EntityFramework.Migrations
 {
     public partial class Promocao : Migration
     {

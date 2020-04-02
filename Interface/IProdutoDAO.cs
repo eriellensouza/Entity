@@ -1,8 +1,8 @@
-﻿using Alura.Loja.Testes.ConsoleApp.Util;
+﻿using Alura.EntityFramework.Util;
 using System.Collections.Generic;
 
 
-namespace Alura.Loja.Testes.ConsoleApp.Interface
+namespace Alura.EntityFramework.Interface
 {
     interface IProdutoDAO
     {

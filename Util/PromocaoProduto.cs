@@ -1,4 +1,4 @@
-﻿namespace Alura.Loja.Testes.ConsoleApp.Util
+﻿namespace Alura.EntityFramework.Util
 {
     public class PromocaoProduto
     {

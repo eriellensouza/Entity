@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using System;
 
-namespace Alura.Loja.Testes.ConsoleApp.Conexao
+namespace Alura.EntityFramework.Conexao
 {
     public class SqlLoggerProvider : ILoggerProvider
     {

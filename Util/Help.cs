@@ -1,10 +1,10 @@
-﻿using Alura.Loja.Testes.ConsoleApp.Conexao;
-using Alura.Loja.Testes.ConsoleApp.Util;
+﻿using Alura.EntityFramework.Conexao;
+using Alura.EntityFramework.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Alura.Loja.Testes.ConsoleApp.Util
+namespace Alura.EntityFramework.Util
 {
     public static class Help
     {

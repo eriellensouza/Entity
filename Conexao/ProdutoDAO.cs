@@ -1,10 +1,10 @@
-﻿using Alura.Loja.Testes.ConsoleApp.Interface;
-using Alura.Loja.Testes.ConsoleApp.Util;
+﻿using Alura.EntityFramework.Interface;
+using Alura.EntityFramework.Util;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
-namespace Alura.Loja.Testes.ConsoleApp
+namespace Alura.EntityFramework
 {
     internal class ProdutoDAO : IDisposable, IProdutoDAO
     {

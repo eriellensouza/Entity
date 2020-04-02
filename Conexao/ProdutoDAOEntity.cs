@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Alura.Loja.Testes.ConsoleApp.Interface;
-using Alura.Loja.Testes.ConsoleApp.Contexto;
-using Alura.Loja.Testes.ConsoleApp.Util;
+using Alura.EntityFramework.Interface;
+using Alura.EntityFramework.Contexto;
+using Alura.EntityFramework.Util;
 
-namespace Alura.Loja.Testes.ConsoleApp.Conexao
+namespace Alura.EntityFramework.Conexao
 {
     public class ProdutoDAOEntity : IProdutoDAO, IDisposable
     {

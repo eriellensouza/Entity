@@ -1,8 +1,8 @@
-﻿using Alura.Loja.Testes.ConsoleApp.Util;
+﻿using Alura.EntityFramework.Util;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Alura.Loja.Testes.ConsoleApp.Contexto
+namespace Alura.EntityFramework.Contexto
 {
     public class LojaContext : DbContext
     {
@@ -24,6 +24,7 @@ namespace Alura.Loja.Testes.ConsoleApp.Contexto
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Compra> Compras { get; set; }
         public DbSet<Promocao> Promocoes { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
