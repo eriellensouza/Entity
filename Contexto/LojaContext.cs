@@ -31,7 +31,18 @@ namespace Alura.EntityFramework.Contexto
             modelBuilder
                 .Entity<PromocaoProduto>()
                 .HasKey(pp => new { pp.ProdutoId, pp.PromocaoId });
-            base.OnModelCreating(modelBuilder);
+
+            modelBuilder
+                .Entity<Endereco>()
+                .ToTable("Enderecos");
+
+
+            modelBuilder
+                .Entity<Endereco>()
+                .Property<int>("ClienteId");
+            modelBuilder
+                .Entity<Endereco>()
+                .HasKey("ClienteId");
         }
         public void ConfigureServices(IServiceCollection services)
         {

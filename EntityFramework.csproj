@@ -232,11 +232,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\20200402215311_Clientes.cs" />
+    <Compile Include="Migrations\20200402215311_Clientes.designer.cs">
+      <DependentUpon>20200402215311_Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\Cliente.cs" />
     <Compile Include="Migrations\20200402004539_Promocao.cs" />
     <Compile Include="Migrations\20200402004539_Promocao.designer.cs">
       <DependentUpon>20200402004539_Promocao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util\Endereco.cs" />
     <Compile Include="Util\PromocaoProduto.cs" />
     <Compile Include="Util\Compra.cs" />
     <Compile Include="Util\Help.cs" />
